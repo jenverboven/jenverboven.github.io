@@ -1,0 +1,39 @@
+/*Google fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Sora&display=swap');
+
+body{
+    background-color: #ECF0F1;
+    color: #023C40;
+    font-family: 'Sora', sans-serif;
+    padding-left: 20px;
+    padding-top: 10px;
+}
+
+a{
+    text-decoration: none;
+    color: #306bac;
+    transition: color, text-decoration, 0.25s;
+}
+
+a:hover{
+    text-decoration: underline;
+    color: #023C40;
+}
+
+input[type="text"]{
+    background-color: white;
+    padding: 5px 15px;
+    font-family: 'Sora', sans-serif;
+    border-radius: 5px;
+}
+
+input[type="submit"]{
+    border-radius: 5px;
+    font-family: 'Sora', sans-serif;
+    transition: color, background-color, 0.1s;
+}
+
+input[type="submit"]:hover{
+    background-color: #306bac;
+    color: #ECF0F1;
+}

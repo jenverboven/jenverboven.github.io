@@ -1,0 +1,31 @@
+<!--Jen Verboven
+1 ITF 14
+r0889629-->
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Add a supermarket</title>
+    <link rel="stylesheet" type="text/css" href="img/style.css"/>
+</head>
+<body>
+<form action="/submitSupermarket">
+    <p>
+        <label for="nameSupermarket">Name supermarket</label>
+        <input type="text" name="nameSupermarket" id="nameSupermarket">
+    </p>
+    <p>
+        <select name="staffIndex">
+            <option value="-1">Choose a general manager</option>
+            <option th:each="staff : ${staffArrayList}"
+                    th:value="${staffStat.index}"
+                    th:text="${staff.getFirstName()} + ' ' + ${staff.getSurName}"/>
+        </select>
+    </p>
+    <p>
+        <input type="submit" value="Confirm supermarket" name="submit">
+    </p>
+</form>
+<a href="/">Back to homepage</a>
+</body>
+</html>

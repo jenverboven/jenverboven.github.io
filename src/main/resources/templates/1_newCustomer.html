@@ -1,0 +1,39 @@
+<!--Jen Verboven
+1 ITF 14
+r0889629-->
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>New Customer</title>
+    <link rel="stylesheet" type="text/css" href="img/style.css"/>
+</head>
+<body>
+<form action="/submitCustomer">
+    <p>
+        <label for="firstName">First name</label>
+        <input type="text" name="firstName" id="firstName">
+    </p>
+    <p>
+        <label for="surName">Surname</label>
+        <input type="text" name="surName" id="surName">
+    </p>
+    <p>
+        <label for="yearOfBirth">Year of birth</label>
+        <input type="text" name="yearOfBirth" id="yearOfBirth">
+    </p>
+    <p th:each="supermarket : ${supermarketArrayList}">
+        <label th:for="${supermarketStat.index}"
+               th:text="${supermarket.getName()}"></label>
+        <input type="radio" name="supermarketIndex"
+               th:value="${supermarketStat.index}"
+               th:id="${supermarketStat.index}"
+               th:checked="${supermarketStat.index} == 0"/>
+    </p>
+    <p>
+        <input type="submit" value="Continue and generate cardnumber" name="submit">
+    </p>
+</form>
+<a href="/">Back to homepage</a>
+</body>
+</html>

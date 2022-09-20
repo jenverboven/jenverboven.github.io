@@ -1,0 +1,21 @@
+<!--Jen Verboven
+1 ITF 14
+r0889629-->
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>List Supermarkets</title>
+    <link rel="stylesheet" type="text/css" href="img/style.css"/>
+</head>
+<body>
+<h3>Supermarkets (and number of departments)</h3>
+<ul>
+    <li th:each="supermarket : ${supermarketArrayList}">
+        <a th:href="@{/10_listDepartments(supermarketIndex=${supermarketStat.index})}"
+           th:text="${supermarket.getName()} + ' (' + ${supermarket.getNumberOfDepartments()} + ') managed by ' + ${supermarket.getGeneralManager().getFirstName()} + ' ' + ${supermarket.getGeneralManager().getSurName()}"/>
+    </li>
+</ul>
+<a href="/">Back to homepage</a>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!--Jen Verboven
+1 ITF 14
+r0889629-->
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>List Customers</title>
+    <link rel="stylesheet" type="text/css" href="img/style.css"/>
+</head>
+<body>
+<h3>Our customers:</h3>
+<ol>
+    <li th:each="customer : ${customerArrayList}"><span th:text="${customer.getFirstName()} + ' ' + ${customer.getSurName()}"></span>
+        <ul>
+            <li th:text="'year of birth: ' + ${customer.getYearOfBirth()}"></li>
+            <li th:text="'cardnumber: ' + ${customer.getCardNumber()}"></li>
+            <li>shopping list:
+                <ul>
+                    <li th:each="item : ${customer.getShoppingList()}"
+                        th:text="${item}"></li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+</ol>
+<a href="/">Back to homepage</a>
+</body>
+</html>
